@@ -2,8 +2,8 @@ import React, {useState, useEffect} from 'react'
 
 function AdviceGenerator() {
 
-    const [adviceNum, setAdviceNum] = useState([])
-    const [advice, setAdvice] = useState([])
+    const [adviceNum, setAdviceNum] = useState(null)
+    const [advice, setAdvice] = useState(null)
 
 
     const getData = async () => {
