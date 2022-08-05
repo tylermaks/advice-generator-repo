@@ -7,11 +7,15 @@ function AdviceGenerator() {
 
 
     const getData = async () => {
-        const res = await fetch('https://api.adviceslip.com/advice')
-        const data = await res.json()
-
-        setAdvice(data.slip.advice)
-        setAdviceNum(data.slip.id)
+        try{
+            const res = await fetch('https://api.adviceslip.com/advice')
+            const data = await res.json()
+    
+            setAdvice(data.slip.advice)
+            setAdviceNum(data.slip.id)
+        } catch (error){
+            console.error(error)
+        }   
     }
 
     useEffect(() => {
