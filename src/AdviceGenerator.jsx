@@ -8,7 +8,7 @@ function AdviceGenerator() {
 
     const getData = async () => {
         try{
-            const res = await fetch('https://api.adviceslip.com/advice')
+            const res = await fetch('https://api.adviceslip.com/advice', { cache: 'no-cache' })
             const data = await res.json()
     
             setAdvice(data.slip.advice)
@@ -20,7 +20,7 @@ function AdviceGenerator() {
 
     useEffect(() => {
         getData()
-    }) 
+    },[]) 
 
     return(
         <div className="generator-container">
